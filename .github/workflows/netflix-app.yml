@@ -20,4 +20,4 @@ jobs:
 
     - name: Deploy files via SSH
       run: |
-        sudo rsync -avz -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./ ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }}:${{ secrets.DEPLOY_DIR }}
+        rsync -avz -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./ ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }}:${{ secrets.DEPLOY_DIR }}
